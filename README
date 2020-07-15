@@ -1,2 +1,31 @@
 website https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/image-processing/intro.html
 
+
+My neighbor
+mentioned a project he was thinking about involving an rPi –
+basically aim a camera out the window and calculate speed of cars on
+the street.
+
+Did a little research and found some work a couple Cambridge (UK) grads did 
+with portions of openCV on their rPi
+https://www.cl.cam.ac.uk/projects/raspberrypi/tutorials/image-processing/intro.html 
+I had the files downloaded, untarred and maked pretty much just like the 
+getting started instructions*. Plugged in $5 webcam, compiled C example
+programs and they just worked*. Framework on first try- nice. Using
+an rPi2 demonstrated about 10fps (640x480) to hdmi image on desktop,
+even got 8fps with streaming edge detection, less than five pic/sec
+over lan.
+
+My program grabs
+three images in consecutive lines of C and the images diffed – if
+the first two (depends on direction) images are similar along a
+horizontal line the length of the first to last image miscompare is
+recorded and is proportional to speed.
+
+
+
+
+Worked for me -
+*Don’t wget or sudo tar commands
+*c programs need <stdlib.h> and add -lm to gcc command line.
+
